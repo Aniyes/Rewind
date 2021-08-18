@@ -4,7 +4,7 @@
 
 
 <head>
-    <title>App Name: A Coding Project By Seydina Diop</title>
+    <title>ཞɛWind: A Coding Project By Seydina Diop</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,19 +59,49 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call Hello World
-                        function HelloWorld() {
-                            alert("Hello World");
+ //Get the string from the page(UserInput)
+//controller function
+function getValue() {
+
+    
+    document.getElementById("alert").classList.add("invisible");
+    let userString = document.getElementById("userString").value;
+    let revString = reverseString(userString);
+    displayString(revString);
+
+    
+}
+
+//Reverse the string
+//logic funtion
+function reverseString(userString) {
+    
+    let revString = [];
+    //reverse a string using a for loop
+    for (let index = userString.length - 1; index>=0; index--) {
+        
+        revString += userString[index];
+        
+    }
+    
+    return revString;
+}
+//Display messange and the reversed string
+//view function
+function displayString(revString) {
+
+    //write to the page
+    document.getElementById("msg").innerHTML = `${revString}`;
+    //show the alert box
+    document.getElementById("alert").classList.remove("invisible");
+}
 }
                     </code>
                 </pre>
 
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structured in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of 'Hello World".</p>
-
+                   
                 </div>
             </div>
 
